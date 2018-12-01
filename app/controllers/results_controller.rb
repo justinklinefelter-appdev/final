@@ -6,6 +6,7 @@ class ResultsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @result = Result.find(params.fetch("id_to_display"))
 
     render("result_templates/show.html.erb")
@@ -32,6 +33,26 @@ class ResultsController < ApplicationController
       @result.save
 
       redirect_back(:fallback_location => "/results", :notice => "Result created successfully.")
+    else
+      render("result_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_race
+    @result = Result.new
+
+    @result.user_id = params.fetch("user_id")
+    @result.race_id = params.fetch("race_id")
+    @result.time = params.fetch("time")
+    @result.overall_place = params.fetch("overall_place")
+    @result.age_group_place = params.fetch("age_group_place")
+    @result.body = params.fetch("body")
+    @result.link = params.fetch("link")
+
+    if @result.valid?
+      @result.save
+
+      redirect_to("/races/#{@result.race_id}", notice: "Result created successfully.")
     else
       render("result_templates/new_form_with_errors.html.erb")
     end
