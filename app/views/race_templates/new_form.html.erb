@@ -1,0 +1,69 @@
+<h1>
+  Add a new race
+</h1>
+
+
+<hr>
+
+<!-- Form race start -->
+<form action="/create_race" method="post">
+<!-- Form race end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for event_id start -->
+  <div class="form-group">
+    <label for="event_id">
+      Event
+    </label>
+
+    <!-- Input for event_id start -->
+    <input type="text" id="event_id" name="event_id" class="form-control">
+    <!-- Input for event_id end -->
+  </div>
+  <!-- Label and input for event_id end -->
+
+  <!-- Label and input for year start -->
+  <div class="form-group">
+    <label for="year">
+      Year
+    </label>
+
+    <!-- Input for year start -->
+    <input type="text" id="year" name="year" class="form-control">
+    <!-- Input for year end -->
+  </div>
+  <!-- Label and input for year end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <!-- Input for location start -->
+    <input type="text" id="location" name="location" class="form-control">
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create race
+  </button>
+</form>
+
+<hr>
+
+<a href="/races">
+  Go back
+</a>
